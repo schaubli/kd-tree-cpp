@@ -7,7 +7,7 @@ public:
     Point *point;
     int alignment = 0;
     KDTree *upper_child;
-    KDTree *lower_child;    
+    KDTree *lower_child;
     AABB aabb;
 
     KDTree();
@@ -16,6 +16,8 @@ public:
     KDTree(Point *p, int alignment, AABB aabb);
     void insert(Point *p);
     Point *find_point(Point *p) const;
+    Point *find_nearest(Point *p) const;
+    ~KDTree();
 };
 
 std::ostream &operator<<(std::ostream &os, const KDTree &tree);

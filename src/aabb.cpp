@@ -38,7 +38,8 @@ AABB::AABB(std::vector<Point *> points)
     upper = Point(max_x, max_y, max_z);
 }
 
-AABB::AABB(AABB parent, Point *split, int alignment, bool is_upper) : upper(parent.upper), lower(parent.lower) {
+AABB::AABB(AABB parent, Point *split, int alignment, bool is_upper) : upper(parent.upper), lower(parent.lower)
+{
     lower.x = (alignment == 0 && is_upper) ? split->x : lower.x;
     lower.y = (alignment == 1 && is_upper) ? split->y : lower.y;
     lower.z = (alignment == 2 && is_upper) ? split->z : lower.z;
